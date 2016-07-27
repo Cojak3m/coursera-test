@@ -57,6 +57,10 @@ h1 {
 /* END HEADER */
 
 /* MAIN CONTENT */
+#main-content-cont {
+  width: 100%;
+}
+
 .section {
   height: 1000px;
   margin: 10px;
