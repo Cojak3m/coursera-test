@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 1.75em;
+}
+
+/* HEADER */
+#header-nav {
+  border-radius: 0;
+}
+#header-nav > .container {
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-brand span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#nav-list {
+  text-align: center;
+}
+/* END HEADER */
+
+/* MAIN CONTENT */
+.section {
+  height: 1000px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #F5F5F5;
+  border: 1px solid #DEDEDE;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* END MAIN CONTENT */
