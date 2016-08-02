@@ -7,12 +7,21 @@ document.addEventListener("DOMContentLoaded", function (event){
 
       //call server to get the name
       $ajaxUtils
-        .sendGetRequest("/W5 L53/data/name.txt", function (request) {
-          var name = request.responseText;
+        .sendGetRequest("/W5 L53/data/name.json", function (res) {
+          var message = res.firstName + " " + res.lastName;
+          if (res.LikesChineseFood) {
+            message += " likes Chinese food";
+          }
+          else {
+            message += " doesn't like Chinese food";
+          }
+          message += " and uses ";
+          message += res.numberOfDisplays;
+          message += " displays for coding.";
 
           document.querySelector("#content")
-            .innerHTML = "<h2>Hello " + name + "!</h2>";
-        });
+            .innerHTML = "<h2>" + message + "</h2>";
+        }, true);
 
 
     });
