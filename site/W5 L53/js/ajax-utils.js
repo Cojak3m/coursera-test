@@ -28,7 +28,7 @@
     };
 
   // Only calls user provided 'responseHnalder'
-  // function if response is ready
+  function if response is ready
   // and not an error
   function handleResponse (request, responseHandler, isJsonResponse) {
     if ((request.readyState == 4) && (request.status == 200)) {
