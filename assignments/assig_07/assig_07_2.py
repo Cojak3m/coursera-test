@@ -1,12 +1,14 @@
 # Use the file name mbox-short.txt as the file name
 fname = raw_input("Enter file name: ")
-count = 0
-float_s = 0
+if len(fname) == 0:
+    fname = "mbox-short.txt"
 try:
     fh = open(fname)
 except:
     print "No such file: ", fname
     exit()
+count = 0
+float_s = 0
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:"):
         continue
