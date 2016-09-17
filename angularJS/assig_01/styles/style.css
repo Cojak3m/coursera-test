@@ -1,0 +1,14 @@
+.has-error {
+  color: #a94442;
+}
+
+.has-success {
+  color: #3c763d;
+}
+
+#communicate {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-bottom: 1em;
+  margin-top: -1em;
+}
