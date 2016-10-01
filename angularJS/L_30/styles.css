@@ -4,10 +4,11 @@ body {
 #list1, #list2 {
   float: left;
 }
-#list2 {
+#list1 {
   margin-right: 40px;
 }
 
 .error {
   color: red;
+  font-weight: bold;
 }
