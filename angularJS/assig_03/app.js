@@ -50,7 +50,7 @@
     var service = this;
     var foundItems = [];
     service.getMatchedMenuItems = function(searchTerm) {
-      var response = $http({
+      var response = $https({
         method: "GET",
         url: (ApiBasePath + "/menu_items.json")
       }).then(function(response) {
