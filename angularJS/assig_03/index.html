@@ -12,12 +12,12 @@
 <body>
    <div class="container" ng-controller="NarrowItDownController as narrowed">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
-
+    <!-- Found Items: {{narrowed.found.length}} -->
     <div class="form-group">
       <input ng-model="narrowed.searchTerm" type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="narrowed.getMenuItems()">Narrow It Down For Me!</button>
+      <button class="btn btn-primary" ng-click="narrowed.getMenuItems(narrowed.searchTerm)">Narrow It Down For Me!</button>
     </div>
     <div class="form-group clear-button">
       <button class="btn btn-primary" ng-click="narrowed.clearMenuItems()">Clear search results</button>
@@ -27,11 +27,7 @@
     <items-loader-indicator></items-loader-indicator>
 
     <!-- found-items should be implemented as a component -->
-    <found-items
-      on-remove="narrowed.removeItem(index)"
-      items="narowed.found"
-    ></found-items>
-    {{narowed.found}}
+    <found-items items="narrowed" on-remove="narrowed.removeItem(index)"></found-items>
   </div>
 
 </body>

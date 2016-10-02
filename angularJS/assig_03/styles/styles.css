@@ -24,6 +24,12 @@ input[type="text"] {
   padding-bottom: 8px;
 }
 
+.dish-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .loader {
   display: none;
   margin-left: 5px;

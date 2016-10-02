@@ -1,6 +1,6 @@
-<div class="row form-group menu-list-item" ng-repeat="item in list.found">
+<div class="row form-group menu-list-item" ng-repeat="item in items.found">
   <div class="col-xs-12">
-    <p class="col-xs-12">{{item.name}}</p>
+    <p class="col-xs-12 dish-name">{{item.name}}</p>
       <div class="col-xs-9">
       <span class="col-xs-2 label label-default">Short name</span>
       <span class="col-xs-10 item-element">{{item.short_name}}</span>
@@ -8,8 +8,7 @@
         <span class="col-xs-10 item-element">{{item.description}}</span>
       </div>
       <div class="col-xs-2">
-        <button class="btn btn-primary" ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+        <button class="btn btn-primary" ng-click="items.onRemove({index: $index});">Don't want this one!</button>
       </div>
   </div>
-
 </div>
