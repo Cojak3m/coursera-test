@@ -18,7 +18,8 @@ function ShoppingListDirective() {
     controller: ShoppingListDirectiveController,
     controllerAs: 'list',
     bindToController: true,
-    link: ShoppingListDirectiveLink
+    link: ShoppingListDirectiveLink,
+    transclude: true
   };
 
   return ddo;
@@ -40,28 +41,25 @@ function ShoppingListDirectiveLink(scope, element, attrs, controller) {
     else {
       removeCookieWarning();
     }
-
   });
 
   function displayCookieWarning() {
-    // Using Angluar jqLite
+    // Using Angular jqLite
     // var warningElem = element.find("div");
-    // console.log(warningElem);
     // warningElem.css('display', 'block');
 
-    // If jQuery included before Angluar
+    // If jQuery included before Angular
     var warningElem = element.find("div.error");
     warningElem.slideDown(900);
   }
 
-
   function removeCookieWarning() {
-    // Using Angluar jqLite
-    // var warningElem = element.find("div");
+    // Using Angular jqLite
+    // var warningElem = element.find('div');
     // warningElem.css('display', 'none');
 
-    // If jQuery included before Angluar
-    var warningElem = element.find("div.error");
+    // If jQuery included before Angular
+    var warningElem = element.find('div.error');
     warningElem.slideUp(900);
   }
 }
@@ -85,28 +83,30 @@ function ShoppingListDirectiveController() {
 
 ShoppingListController.$inject = ['ShoppingListFactory'];
 function ShoppingListController(ShoppingListFactory) {
-  var viewList = this;
+  var list = this;
 
   // Use factory to create new shopping list service
   var shoppingList = ShoppingListFactory();
 
-  viewList.items = shoppingList.getItems();
+  list.items = shoppingList.getItems();
   var origTitle = "Shopping List #1";
-  viewList.title = origTitle + " (" + viewList.items.length + " items )";
+  list.title = origTitle + " (" + list.items.length + " items )";
 
-  viewList.itemName = "";
-  viewList.itemQuantity = "";
+  list.warning = "COOKIES DETECTED!";
 
-  viewList.addItem = function () {
-    shoppingList.addItem(viewList.itemName, viewList.itemQuantity);
-    viewList.title = origTitle + " (" + viewList.items.length + " items )";
+  list.itemName = "";
+  list.itemQuantity = "";
+
+  list.addItem = function () {
+    shoppingList.addItem(list.itemName, list.itemQuantity);
+    list.title = origTitle + " (" + list.items.length + " items )";
   };
 
-  viewList.removeItem = function (itemIndex) {
+  list.removeItem = function (itemIndex) {
     console.log("'this' is: ", this);
     this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
     shoppingList.removeItem(itemIndex);
-    this.title = origTitle + " (" + viewList.items.length + " items )";
+    this.title = origTitle + " (" + list.items.length + " items )";
   };
 }
 
