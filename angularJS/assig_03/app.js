@@ -72,12 +72,12 @@
     service.removeItem = function(itemIndex){
       foundItems.splice(itemIndex, 1);
       return foundItems;
-    }
+    };
 
     service.clearList = function(){
       foundItems = [];
       return foundItems;
-    }
+    };
 
   }
 
