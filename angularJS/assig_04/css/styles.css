@@ -38,6 +38,7 @@ div.tabs {
 .dish-description {
   display: block;
   font-weight: normal;
+  font-size: 1em;
 }
 
 .dish-price {
