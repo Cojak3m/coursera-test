@@ -1,12 +1,12 @@
 (function () {
-  'use strict';
+'use strict';
 
-  angular.module('MenuApp')
-  .component('categories', {
-    templateUrl: 'src/menuApp/templates/categories.template.html',
-    bindings: {
-      items: '<'
-    }
-  });
+angular.module('MenuApp')
+.component('categoriesList', {
+  templateUrl: 'src/templates/categories.list.template.html',
+  bindings: {
+    items: '<'
+  }
+});
 
 })();

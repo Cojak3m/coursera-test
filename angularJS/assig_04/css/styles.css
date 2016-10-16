@@ -14,3 +14,37 @@ div.tabs {
 .activeTab {
   font-weight: bold;
 }
+
+.button-frame {
+  padding: 0.2em;
+  height: 3em;
+}
+
+.label-item {
+  border-width: thin;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 0.5em;
+  font-size: 1.2em;
+}
+
+.dish-name {
+  font-style: normal;
+  font-weight: bold;
+  display: block;
+}
+
+.dish-description {
+  display: block;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.dish-price {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+}
