@@ -1,0 +1,13 @@
+input {
+  color: rgb(0, 0, 0);
+}
+
+.ng-touched.ng-invalid {
+    border: 2px solid;
+    border-color: rgb(255, 0, 0);
+  }
+
+button[disabled],
+button[disabled]:hover {
+  color: rgb(200, 200, 200);
+}

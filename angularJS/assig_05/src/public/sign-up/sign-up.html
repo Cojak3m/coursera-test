@@ -1,0 +1,90 @@
+<div class="container">
+  <fieldset>
+    <h2>Newsletter - Sign up:</h2>
+    <hr />
+      <form name="signUpForm" novalidate>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">First Name: </label>
+          <input class="col-xs-4 col-md-3"
+                 type="text"
+                 name="firstName"
+                 placeholder="First Name"
+                 ng-model="signUpCtrl.user.firstName"
+                 required
+                 minlength="3"
+                 ng-maxlength="25" />
+          <span class="col-xs-4 col-md-4"
+                ng-if="(signUpForm.firstName.$error.minlength || signUpForm.firstName.$error.required) && signUpForm.firstName.$touched">
+                First Name must be at least 3 characters long
+          </span>
+          <span class="col-xs-4 col-md-4"
+                ng-if="signUpForm.firstName.$error.maxlength && signUpForm.firstName.$touched">
+                First Name must not be longer than 25 characters
+          </span>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Last Name: </label>
+          <input class="col-xs-4 col-md-3"
+                 type="text"
+                 name="lastName"
+                 placeholder="Last Name"
+                 ng-model="signUpCtrl.user.lastName"
+                 required
+                 minlength="3"
+                 ng-maxlength="25"  />
+                 <span class="col-xs-4 col-md-4"
+                       ng-if="(signUpForm.lastName.$error.minlength || signUpForm.lastName.$error.required) && signUpForm.lastName.$touched">
+                       First Name must be at least 3 characters long
+                 </span>
+                 <span class="col-xs-4 col-md-4"
+                       ng-if="signUpForm.lastName.$error.maxlength && signUpForm.lastName.$touched">
+                       First Name must not be longer than 25 characters
+                 </span>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">E-mail address: </label>
+          <input class="col-xs-4 col-md-3"
+                 type="email"
+                 name="email"
+                 placeholder="e-mail"
+                 ng-model="signUpCtrl.user.email" />
+          <span class="col-xs-4 col-md-4"
+                ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                Must be a valid email address: handle@domain format
+          </span>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Phone number: </label>
+          <input class="col-xs-4 col-md-3"
+                 type="text"
+                 name="phoneNo"
+                 placeholder="Phone ###-###-####"
+                 ng-model="signUpCtrl.user.phoneNo"
+                 pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span class="col-xs-4 col-md-4"
+                ng-if="signUpForm.phoneNo.$invalid && signUpForm.phoneNo.$touched">
+                Phone must be in the format ###-###-####.
+          </span>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Favourite dish number: </label>
+          <input class="col-xs-4 col-md-3"
+                 type="text"
+                 name="favDishNo"
+                 placeholder='Dish code name (e.g. "L1")'
+                 ng-model="signUpCtrl.user.favDishNo" />
+        </div>
+        <br/>
+        <div class="row">
+          <button class="col-xs-4 col-md-3 btn-default"
+            ng-disabled="signUpForm.$invalid"
+            ng-click="signUpCtrl.submit()">Submit</button>
+
+            <!-- <div style="margin-top: 10px;">
+              Form valid? {{ signUpForm.$valid }}
+            </div> -->
+          </div>
+
+      </form>
+  </fieldset>
+</div>
