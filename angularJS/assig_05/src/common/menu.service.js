@@ -10,6 +10,8 @@ function MenuService($http, ApiPath) {
   var service = this;
   var user = {};
   var success = false;
+  user.updated = false;
+  user.notUpdated = true;
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
@@ -42,6 +44,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.setUser = function(){
+    //console.log("service.setUser: ", user);
     return user;
   };
 

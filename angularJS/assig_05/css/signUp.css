@@ -11,3 +11,7 @@ button[disabled],
 button[disabled]:hover {
   color: rgb(200, 200, 200);
 }
+
+.alert {
+  display: block;
+}

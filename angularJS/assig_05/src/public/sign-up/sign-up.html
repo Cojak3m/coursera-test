@@ -75,6 +75,12 @@
                  ng-model="signUpCtrl.user.favDishNo" />
         </div>
         <br/>
+        <div class="alert alert-danger" role="alert" ng-if="signUpCtrl.error">
+          No such menu number exists
+        </div>
+        <div class="alert alert-success" role="alert" ng-if="signUpCtrl.completed">
+          Your information has been saved
+        </div>
         <div class="row">
           <button class="col-xs-4 col-md-3 btn-default"
             ng-disabled="signUpForm.$invalid"

@@ -7,17 +7,23 @@
   SignUpController.$inject =['MenuService'];
   function SignUpController(MenuService){
     var signUpCtrl = this;
+    signUpCtrl.error = false;
+    signUpCtrl.completed = false;
 
     signUpCtrl.submit = function(){
-      signUpCtrl.completed = true;
       var promise = MenuService.getFavItem(signUpCtrl.user.favDishNo);
       promise.then(function(response){
         signUpCtrl.user.favItem = response;
+        signUpCtrl.user.updated = true;
+        signUpCtrl.user.notUpdated = false;
         MenuService.getUserData(signUpCtrl.user);
-        console.log("signUpCtrl.submit:USER: ", signUpCtrl.user);
+        //console.log("signUpCtrl.submit:USER: ", signUpCtrl.user);
+        signUpCtrl.completed = true;
+        signUpCtrl.error = false;
       })
       .catch(function(error){
-        console.log(error);
+        signUpCtrl.error = true;
+        signUpCtrl.completed = false;
       });
     };
   }

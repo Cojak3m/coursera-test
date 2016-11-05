@@ -1,0 +1,52 @@
+<div class="container">
+  <fieldset>
+    <h2>My info:</h2>
+    <hr />
+    <div class="alert alert-danger" role="alert" ng-if="myInfoCtrl.user.notUpdated">
+      Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a>
+    </div>
+      <form name="myInfoForm" novalidate ng-if="myInfoCtrl.user.updated">
+        <div class="row">
+          <label class="col-xs-4 col-md-3">First Name: </label>
+          <label class="col-xs-4 col-md-3">{{myInfoCtrl.user.firstName}}</label>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Last Name: </label>
+          <label class="col-xs-4 col-md-3">{{myInfoCtrl.user.lastName}}</label>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">E-mail address: </label>
+          <label class="col-xs-4 col-md-3">{{myInfoCtrl.user.email}}</label>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Phone number: </label>
+          <label class="col-xs-4 col-md-3">{{myInfoCtrl.user.phoneNo}}</label>
+        </div>
+        <div class="row">
+          <label class="col-xs-4 col-md-3">Favourite dish: </label>
+          <label class="col-xs-9 col-md-9">
+            <div class="row">
+              <div class="menu-item-description col-sm-6">
+                <h3 class="menu-item-title">{{myInfoCtrl.user.favItem.name}}</h3>
+                <p class="menu-item-details">{{myInfoCtrl.user.favItem.description}}</p>
+              </div>
+              <div class="col-sm-5">
+                <div class="menu-item-photo">
+                  <div>{{myInfoCtrl.user.favItem.short_name}}</div>
+                  <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.user.favItem.short_name}}.jpg" alt="{{$myInfoCtrl.user.favItem.name}}">
+                </div>
+              </div>
+
+                <div class="menu-item-price col-sm-12">
+                  {{myInfoCtrl.user.favItem.price_small | currency}}
+                  <span> {{myInfoCtrl.user.favItem.small_portion_name}}</span>
+                </div>
+                <div class="menu-item-price col-sm-12">
+                   {{myInfoCtrl.user.favItem.price_large | currency}}  <span>{{myInfoCtrl.user.favItem.large_portion_name}}</span>
+                </div>
+            </div>
+          </label>
+        </div>
+      </form>
+  </fieldset>
+</div>
